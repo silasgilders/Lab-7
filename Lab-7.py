@@ -1,10 +1,14 @@
 #|-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-|
 #       				       BEHOLD, THE HEADER.
-# Description:
+# Description: Prints information from a Data Structure into a preset 
+#                  group of sentences
+#
 #
 # Usage: python Lab-7.py
 #
+#
 # Parameters: N/A
+#
 #
 #|-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-||-|
   
@@ -32,18 +36,24 @@ def main():
 
 def print_person_info(person_info):
     
-    sentence = "Hello, my name is " + person_info['name'] + ", " + "my student number is " + person_info['student_id']
+    sentence = "Hello, my name is " + person_info['name'] + ", " + "my student number is " + person_info['student_id'] + "."
     sentence2 = "My ideal pizza has "
+    sentence3 = "I like to watch "
+    sentence4 = "Some of my favourite movies are "
+
+
 
     for topping in person_info['pizza_toppings']:
-        sentence2 += str(topping['pizza_toppings'])
-    #for i in enumerate(person_info['pizza_toppings']):
-        #if i < len(str(person_info['pizza_toppings'])):
-            #sentence2 += ', '
-        #else:
-            #sentence2 += '.'
+        sentence2 += topping + ", "
+   
+    for genre in person_info['movies']:
+        sentence3 += genre['genre'] + " movies."
+    
+    for movie in person_info['movies'][0]['title']:
+        sentence4 += movie + ", "
+    
 
-    print(sentence, "\n", sentence2)
+    print(sentence, "\n", sentence2, '\n', sentence3, '\n', sentence4)
 
 
 
