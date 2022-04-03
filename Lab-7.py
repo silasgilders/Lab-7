@@ -18,20 +18,39 @@ def main():
         'name': 'Silas Gilders',
         'student_id': '1026511',
         'pizza_toppings' : [
-            'Pepperoni',
-            'Sausage',
-            'Onions',],
+            
+            ],
 
         'movies' :[ {
         
-            'title' : [ "Lord of the Rings", "Pacific Rim", "Pulp Fiction",],
+            'title' : [ "Lord of the Rings", "Pacific Rim"],
             'genre' : 'Action',
             }
         ]
         
 
     }
+    
+
+    
+    new_topping = ('Sausage', 'Onion', 'Pepperroni')
+    topping_add(person_info, new_topping)
+
+
+    new_movie = ('Pulp Fiction')
+    person_info['movies'][0]['title'].insert(1, new_movie)
+
+    
+
+
+
+
     print_person_info(person_info)
+
+
+def topping_add(person, pizza):
+    for p in pizza:
+        person['pizza_toppings'].append(p)
 
 
 def print_person_info(person_info):
@@ -43,7 +62,7 @@ def print_person_info(person_info):
 
 
 
-    for topping in person_info['pizza_toppings']:
+    for topping in sorted(person_info['pizza_toppings']):
         sentence2 += topping + ", "
    
     for genre in person_info['movies']:
